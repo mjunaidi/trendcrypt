@@ -1,0 +1,15 @@
+<form>
+  <div class="modal-header">
+    <h3 class="modal-title">Enter decryption key</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="ctrl.key" autofocus />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <!--<button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>-->
+    <button class="btn btn-primary pull-left" type="submit" ng-click="ctrl.set('key', ctrl.key, true)">OK</button>
+    <button class="btn btn-warning pull-right" type="button" ng-click="ctrl.cancel()">Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,48 @@
+<div class="row" ng-init="ctrl._initBody()">
+  <div class="col-xs-12 home">
+    <div class="tools">
+      <button class="btn btn-default pull-right" type="button" ng-click="ctrl.openModal()">
+        <span class="glyphicon glyphicon-eye-open"></span>
+      </button>
+      <button class="btn btn-default pull-right" type="button" ng-click="ctrl.markdown=!ctrl.markdown">
+        <span ng-if="ctrl.markdown" class="glyphicon glyphicon-chevron-up"></span>
+        <span ng-if="!ctrl.markdown" class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+      <button class="btn btn-default pull-right"
+            ngclipboard
+            data-clipboard-text="{{ctrl.dRecords[0]}}"
+            ngclipboard-success="ctrl.copied(e)"
+            class="btn btn-primary"
+            type="button">
+        <span class="glyphicon glyphicon-copy"></span>
+      </button>
+    </div>
+
+    <div class="row show-grid content-container" ng-hide="ctrl.valid">
+      <div class="col-xs-12 break-word"  ng-repeat="r in ctrl.records track by $index">
+        {{r}}
+      </div>
+    </div>
+
+    <div class="row" ng-show="ctrl.valid">
+      <div class="col-xs-12">
+        <div class="row show-grid row-bordered content-container" ng-repeat="d in ctrl.dRecords track by $index">
+          <div class="col-xs-12 center-block" ng-if="ctrl.markdown" markdown-it="d">
+          </div>
+          <div class="col-xs-12" ng-if="!ctrl.markdown">
+            {{d}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="row" ng-hide="ctrl.decrypted">
+      <div class="col-xs-12" markdown-it="ctrl.val">
+      </div>
+    </div>
+    <div class="row" ng-show="ctrl.decrypted">
+      <div class="col-xs-12" markdown-it="ctrl.decrypted">
+      </div>
+    </div>-->
+  </div>
+</div>

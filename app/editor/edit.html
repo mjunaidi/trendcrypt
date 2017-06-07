@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm-6">
+    <form class="form-horizontal">
+      <div class="form-group" ng-repeat="e in ctrl.builder">
+        <div class="row">
+          <div class="col-sm-5">
+            <input class="form-control" type="text" placeholder="key" ng-model="e.key" ng-change="ctrl.build()">
+          </div>
+          <div class="col-sm-2">
+            <label>:</label>
+          </div>
+          <ng-switch on="e.type">
+          <div ng-switch-when="primitive" class="col-sm-5">
+            <input class="form-control" type="text" placeholder="{{e.type}}" ng-model="e.value" ng-change="ctrl.build()">
+          </div>
+          <div ng-switch-when="array" class="col-sm-5">
+            <label>[]</label>
+            <input class="form-control" type="text" placeholder="{{e.type}}" ng-model="e.value" ng-change="ctrl.build()">
+          </div>
+          <div ng-switch-when="object" class="col-sm-5">
+            <input class="form-control" type="text" placeholder="{{e.type}}" ng-model="e.value" ng-change="ctrl.build()">
+          </div>
+          </ng-switch>
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-success" ng-click="ctrl.changeType(e, ctrl.PRIMITIVE)">Primitive</button>
+            <button type="button" class="btn btn-info" ng-click="ctrl.changeType(e, ctrl.ARRAY)">Array</button>
+            <button type="button" class="btn btn-warning" ng-click="ctrl.changeType(e, ctrl.OBJECT)">Object</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-default" ng-click="ctrl.add('','',ctrl.builder)">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+    </form>
+  </div>
+  <div class="col-sm-6">{{ ctrl.model | json }}</div>
+</div>

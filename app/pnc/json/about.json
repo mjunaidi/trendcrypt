@@ -1,0 +1,27 @@
+{
+  "name" : "TrendCrypt",
+  "logo" : "/assets/ico/apple-touch-icon-57-precomposed.png",
+  "description" : "An encryption tool",
+  "versionName" : "beta",
+  "version" : "Version 2.0-Beta",
+  "developer" : "Developed by: <strong>M Junaidi Jusoh</strong>",
+  "countryCode" : "my",
+  "country" : "Malaysia",
+  "copyright" : "&copy; M Junaidi Jusoh 2017 Malaysia",
+  "credits" : "This application is made possible by AngularJS, Bootstrap and other open source software and products.",
+  "themes" : "Themes powered by Bootswatch.",
+  "links" : [
+    {
+      "name" : "AngularJS",
+      "url" : "http://angularjs.org/"
+    },
+    {
+      "name" : "Bootstrap",
+      "url" : "http://getbootstrap.com/"
+    },
+    {
+      "name" : "Bootswatch",
+      "url" : "http://bootswatch.com/"
+    }
+  ]
+}

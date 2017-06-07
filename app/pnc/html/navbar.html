@@ -1,0 +1,79 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <span><a class="navbar-brand" href="">TrendCrypt</a></span>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <!--<li ng-repeat="t in ctrl.header.contents" ng-class="ctrl.tag === t.name?'active':''">
+          <a href="" ng-click="ctrl.set({'tag':t.name,'slug':'x','first':0})">{{t.label}}</a>
+        </li> -->
+        <li ng-repeat="p in ctrl.navbar.pages"
+            ng-class="ctrl._location.path() === p.path?'active':''"
+            ng-if="p.ra===true?ctrl.auth:true">
+          <a ng-href="#{{p.path}}">{{p.name}}</a>
+        </li>
+      </ul>
+      <!-- right navbar links -->
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span ng-if="ctrl.auth" class="glyphicon glyphicon-user"></span>
+            <span ng-if="!ctrl.auth" class="glyphicon glyphicon-log-in"></span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <div ng-if="!ctrl.auth" class="dropdown-container">
+                <div ng-if="ctrl.authErr" class="alert alert-danger" role="alert">
+                  <span class="glyphicon glyphicon-warning-sign"></span>
+                  <strong>Try again!</strong>
+                </div>
+
+                <form>
+                  <div class="form-group">
+                    <input ng-model="ctrl.fk"
+                      type="password"
+                      class="form-control"
+                      placeholder=""
+                      autofocus>
+                  </div>
+                  <div class="form-group">
+                    <input ng-model="ctrl.sk"
+                      type="password"
+                      class="form-control"
+                      placeholder="">
+                  </div>
+                  <button ng-click="ctrl.enter()" type="submit" class="btn btn-warning btn-block">
+                    <span class="glyphicon glyphicon-log-in"></span> Enter
+                  </button>
+                </form>
+              </div>
+              <a ng-if="ctrl.auth" href="" ng-click="ctrl.exit()">
+                <span class="glyphicon glyphicon-log-out"></span> Exit
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ng-repeat="t in ctrl.themes"><a href="" ng-click="ctrl.set('theme',t)"> <span ng-if="t === ctrl.theme" class="glyphicon glyphicon-ok"></span> {{ t }}
+            </a></li>
+          </ul>
+        </li>
+
+        <li><a ng-click="ctrl.modal(ctrl.aboutOpts)" href=""><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></li>
+
+      </ul>
+    </div>
+    <!-- /.nav-collapse -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.navbar -->

@@ -1,0 +1,47 @@
+<div class="row max-height" ng-init="ctrl._initBody()">
+  <div class="col-xs-12 max-height">
+
+    <div class="row show-grid">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="ctrl.key" ng-change="ctrl.set('key',ctrl.key)"
+             placeholder="Enter encryption key..."
+             title="Encryption key"
+             tooltip-placement="bottom" uib-tooltip="Encryption key" />
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit" ng-click="ctrl.encrypt()">
+              <span class="glyphicon glyphicon-eye-close"></span> Encrypt it!
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row show-grid max-height">
+      <div class="col-xs-12 max-height">
+        <div class="col-xs-5 max-height no-padding">
+          <textarea class="form-control" ng-model="ctrl.input" ng-change="ctrl.set('input',ctrl.input)"></textarea>
+        </div>
+        <div class="col-xs-5 max-height">
+          <div markdown-it="ctrl.input" class="preview"></div>
+        </div>
+        <div class="col-xs-2 max-height no-padding encrypted">
+          <div ng-if="ctrl.isCopied" class="alert alert-success" role="alert">Copied!</div>
+          <button ng-if="ctrl.focus"
+                ngclipboard
+                data-clipboard-target="#result"
+                ngclipboard-success="ctrl.copied(e)"
+                class="btn btn-primary"
+                type="submit">
+            <span class="glyphicon glyphicon-copy"></span> Copy
+          </button>
+          <textarea id="result" class="form-control cursor-auto"
+            ng-model="ctrl.result"
+            ng-focus="ctrl.focus=true"
+            readonly></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
