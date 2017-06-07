@@ -42,7 +42,7 @@
       templateUrl : '../app/pnc/html/navbar.html',
       pages: [
         {
-          "name" : "Home", "path" : "/", "ra" : false
+          "name" : "Home", "path" : "/", "ra" : true
         }, {
           "name" : "Encrypt", "path" : "/enc", "ra" : true
         }, {
