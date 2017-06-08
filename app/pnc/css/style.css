@@ -88,3 +88,36 @@ div.home {
   word-wrap: break-word;
 	-webkit-font-smoothing: antialiased;
 }
+
+/* more readable */
+.md-content {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+}
+
+@media (max-width: 1040px) and (min-width: 768px) {
+  .md-content {
+    font-size: 18px;
+    line-height: 1.58;
+    letter-spacing: -.004em;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 481px) {
+  .md-content {
+    font-size: 18px;
+    line-height: 1.58;
+    letter-spacing: -.004em;
+  }
+}
+
+@media (max-width: 480px) {
+  .md-content {
+    font-size: 18px;
+    line-height: 1.58;
+    letter-spacing: -.004em;
+  }
+}

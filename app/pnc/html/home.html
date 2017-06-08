@@ -27,7 +27,7 @@
     <div class="row" ng-show="ctrl.valid">
       <div class="col-xs-12">
         <div class="row show-grid row-bordered content-container" ng-repeat="d in ctrl.dRecords track by $index">
-          <div class="col-xs-12 center-block" ng-if="ctrl.markdown" markdown-it="d">
+          <div class="col-xs-12 center-block md-content" ng-if="ctrl.markdown" markdown-it="d">
           </div>
           <div class="col-xs-12" ng-if="!ctrl.markdown">
             {{d}}
@@ -36,13 +36,5 @@
       </div>
     </div>
 
-    <!--<div class="row" ng-hide="ctrl.decrypted">
-      <div class="col-xs-12" markdown-it="ctrl.val">
-      </div>
-    </div>
-    <div class="row" ng-show="ctrl.decrypted">
-      <div class="col-xs-12" markdown-it="ctrl.decrypted">
-      </div>
-    </div>-->
   </div>
 </div>
