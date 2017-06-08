@@ -94,30 +94,30 @@ div.home {
     font-weight: 400;
     font-style: normal;
     font-size: 21px;
-    line-height: 1.58;
+    line-height: 1.53;
     letter-spacing: -.003em;
 }
 
 @media (max-width: 1040px) and (min-width: 768px) {
   .md-content {
     font-size: 18px;
-    line-height: 1.58;
+    line-height: 1.48;
     letter-spacing: -.004em;
   }
 }
 
 @media (max-width: 767px) and (min-width: 481px) {
   .md-content {
-    font-size: 18px;
-    line-height: 1.58;
-    letter-spacing: -.004em;
+    font-size: 16px;
+    line-height: 1.43;
+    letter-spacing: -.005em;
   }
 }
 
 @media (max-width: 480px) {
   .md-content {
-    font-size: 18px;
-    line-height: 1.58;
-    letter-spacing: -.004em;
+    font-size: 15px;
+    line-height: 1.38;
+    letter-spacing: -.006em;
   }
 }
