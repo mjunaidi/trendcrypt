@@ -39,7 +39,7 @@
     this.markdown = true;
 
     this.navbar = {
-      templateUrl : '../app/pnc/html/navbar.html',
+      templateUrl : 'app/pnc/html/navbar.html',
       pages: [
         {
           "name" : "Home", "path" : "/", "ra" : true
@@ -62,11 +62,11 @@
     this.store('theme', this._themeService.pick(14));
 
     this.aboutOpts = {
-      templateUrl : '../app/pnc/html/about.html',
+      templateUrl : 'app/pnc/html/about.html',
       config : function() {
         return {
           'get' : {
-            'paths' : [ '../app/pnc/json/about.json' ],
+            'paths' : [ 'app/pnc/json/about.json' ],
             'key' : 'init'
           }
         };
@@ -131,7 +131,7 @@
   };
 
   MainController.prototype.experiment = function() {
-    var path = "../app/pnc/data/";
+    var path = "app/pnc/data/";
     var lPath = path + "l";
     this.dataPaths = [];
     this.records = [];
@@ -184,7 +184,7 @@
 
   // obsolete
   MainController.prototype.readData = function() {
-    var path = "../app/pnc/json/data.json";
+    var path = "app/pnc/json/data.json";
     var ctrl = this;
     this._http.get(path)
       .success(function (data) {
@@ -260,7 +260,7 @@
   MainController.prototype.enter = function() {
     if (!this.mk) return;
     if (!this.sk) return;
-    var path = "../app/pnc/data/m";
+    var path = "app/pnc/data/m";
     var ctrl = this;
     ctrl._http.get(path)
       .success(function (data) {
@@ -410,7 +410,7 @@
 
   MainController.prototype.openModal = function() {
     this.modal({
-      templateUrl: '../app/pnc/html/modal.html'
+      templateUrl: 'app/pnc/html/modal.html'
     });
   };
 
